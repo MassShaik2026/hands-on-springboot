@@ -1,0 +1,25 @@
+version: "3"
+services:
+  hands-on-docker:
+    image: hands-on-network
+    ports: 
+      - "8085:8080"
+    networks:
+      - hands-on-network
+    volumes:
+      - /data
+    depends_on: 
+      - mydatabase
+
+  mydatabase:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+	  MYSQL_DATABASE : users
+    networks: 
+      - hands-on-network
+    volumes:
+      - /mysql
+
+networks: 
+  hands-on-network: {}
