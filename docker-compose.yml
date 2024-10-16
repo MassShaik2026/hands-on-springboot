@@ -14,8 +14,8 @@ services:
   mydatabase:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: root
-	  MYSQL_DATABASE : users
+      - MYSQL_ROOT_PASSWORD = root
+	  - MYSQL_DATABASE = users
     networks: 
       - hands-on-network
     volumes:
